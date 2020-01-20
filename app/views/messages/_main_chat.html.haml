@@ -1,0 +1,30 @@
+.main_chat
+  .group_info
+    .group_info__edit_btn
+      = link_to 'Edit', '#'
+      %i.Edit
+    .group_info__group_name
+      test
+    .group_info__member
+      member:kaito
+  .message_list
+    .data
+      .info
+        .info__talker
+          kaito
+        .info__date
+          2020/1/18(sat)22:17:50
+      .text
+        ooba
+  .message_form
+    .form
+      %form.new_message
+        .message_box
+          %input{type:"text", class: "message_box__text", placeholder:"type a message"}
+          %label{class:"message_box__image"}
+            %i.fas.fa-image
+            %input{type:"file",class:"message_box__image__file"}
+        %input{type:"submit",class:"submit-btn"}      
+            
+      
+
