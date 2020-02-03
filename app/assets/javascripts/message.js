@@ -3,7 +3,7 @@ $(function(){
   var buildHTML = function(message) {
     if (message.content) {
       
-      var html = `<div class="message" data-message-id= message.id>
+      var html = `<div class="message" data-message-id= ${message.id}>
         <div class="upper-message">
           <div class="upper-message__user-name">
             ${message.user_name}
@@ -20,7 +20,7 @@ $(function(){
       </div>`
     } else if (message.image) {
       
-      var html = `<div class="message" data-message-id= message.id>
+      var html = `<div class="message" data-message-id= ${message.id}>
         <div class="upper-message">
           <div class="upper-message__user-name">
             ${message.user_name}
@@ -54,6 +54,7 @@ $(function(){
        var html = buildHTML(data);
        $('.messages').append(html);      
        $('form')[0].reset();
+       $('.form__submit').prop ('disabled',false);
      })
 })
 
@@ -67,6 +68,7 @@ var reloadMessages = function() {
     dataType: 'json',
     data: {id: last_message_id}
   })
+
   .done(function(messages) {
     if (messages.length !== 0) {
       var insertHTML = '';
