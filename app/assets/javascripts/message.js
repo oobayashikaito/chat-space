@@ -1,7 +1,7 @@
 $(function(){
  
   var buildHTML = function(message) {
-    if (message.content) {
+    if (message.image) {
       
       var html = `<div class="message" data-message-id= ${message.id}>
         <div class="upper-message">
@@ -16,9 +16,10 @@ $(function(){
           <p class="lower-message__content">
             ${message.content}
           </p>
+          <img src= ${message.image} class="lower-message__image" >
         </div>
       </div>`
-    } else if (message.image) {
+    } else if (message.content) {
       
       var html = `<div class="message" data-message-id= ${message.id}>
         <div class="upper-message">
@@ -30,7 +31,9 @@ $(function(){
           </div>
         </div>
         <div class="lower-message">
-          <img src= ${message.image} class="lower-message__image" >
+        <p class="lower-message__content">
+          ${message.content}
+        </p>
         </div>
       </div>`  
     };
@@ -54,7 +57,8 @@ $(function(){
        var html = buildHTML(data);
        $('.messages').append(html);      
        $('form')[0].reset();
-       $('.form__submit').prop ('disabled',false);
+       $('.form__submit').prop ('disabled',false);       
+       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
      })
 })
 
