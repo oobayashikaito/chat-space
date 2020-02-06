@@ -7,9 +7,8 @@
       = @group.name
     .group_info__member
       Member：
-      %ul
-        - @group.users.each do |user|
-          %li= user.name
+      -@group.users.each do |user|
+        = user.name
       
 
         

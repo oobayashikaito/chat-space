@@ -146,14 +146,15 @@
         color: #ffffff;
           &__icon {
               font-size: 14px;
-              
+              display: flex;
+              justify-content: space-between;
               float: right;
               a {
                 color: #ffffff;
               }
             &__tweets_btn {
-             padding-right: 5px;
-             text-decoration: none;
+              padding-right: 5px;
+              text-decoration: none;
             }
             
           }

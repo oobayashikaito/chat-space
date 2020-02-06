@@ -4,9 +4,9 @@
     .user_name__top_item
       = current_user.name
       .user_name__top_item__icon 
-        = link_to new_group_path do
+        = link_to new_group_path, class: "edit" do
           = icon('fas', 'edit', class: 'icon')
-        = link_to edit_user_path(current_user) do
+        = link_to edit_user_path(current_user), class: "cog"  do
           = icon('fas', 'cog', class: 'icon')
   .group_list 
     - current_user.groups.each do |group|     
